@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Web controller for the ESP32 RC car">
+  <title>ESP32 RC Car</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ESP32 RC CAR</h1>
+  <p id="status" class="status" role="status">Connecting&hellip;</p>
+
+  <main>
+    <div class="left">
+      <p><button id="btn-forward" class="button" data-cmd="up" aria-label="Forward">&#8593;</button></p>
+      <p><button id="btn-reverse" class="button" data-cmd="down" aria-label="Reverse">&#8595;</button></p>
+    </div>
+    <div class="right">
+      <p>
+        <button id="btn-left" class="button" data-cmd="left" aria-label="Turn left">&#8592;</button>
+        <button id="btn-right" class="button" data-cmd="right" aria-label="Turn right">&#8594;</button>
+      </p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
