@@ -2,8 +2,8 @@
 #include <ESPAsyncWebServer.h>
 #include <AsyncTCP.h>
 
-const char* ssid = "OnePlus";
-const char* password = "12345689";
+const char* ssid = "REDACTED";
+const char* password = "REDACTED";
 
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");

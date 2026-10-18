@@ -1,0 +1,9 @@
+# PlatformIO build output
+.pio/
+
+# Editor-generated files (PlatformIO regenerates these with machine-specific paths)
+.vscode/*
+!.vscode/extensions.json
+
+# Local credentials - never commit. Copy include/secrets.example.h instead.
+include/secrets.h
