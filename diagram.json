@@ -1,0 +1,293 @@
+{
+  "version": 1,
+  "author": "Harsha",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_lf",
+      "top": -90,
+      "left": 180,
+      "attrs": {
+        "color": "green",
+        "label": "L-FWD (33)"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_lr",
+      "top": -40,
+      "left": 180,
+      "attrs": {
+        "color": "red",
+        "label": "L-REV (25)"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_rf",
+      "top": 20,
+      "left": 180,
+      "attrs": {
+        "color": "green",
+        "label": "R-FWD (26)"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_rr",
+      "top": 70,
+      "left": 180,
+      "attrs": {
+        "color": "red",
+        "label": "R-REV (27)"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_status",
+      "top": 140,
+      "left": 180,
+      "attrs": {
+        "color": "blue",
+        "label": "STATE (2)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -80,
+      "left": 250,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -30,
+      "left": 250,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 30,
+      "left": 250,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 80,
+      "left": 250,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 150,
+      "left": 250,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "logic1",
+      "top": -90,
+      "left": 360,
+      "attrs": {
+        "bufferSize": "50000"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "esp:33",
+      "led_lf:A",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "led_lf:C",
+      "r1:1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "r1:2",
+      "esp:GND.1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:25",
+      "led_lr:A",
+      "red",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "led_lr:C",
+      "r2:1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "r2:2",
+      "esp:GND.1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:26",
+      "led_rf:A",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "led_rf:C",
+      "r3:1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "r3:2",
+      "esp:GND.1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:27",
+      "led_rr:A",
+      "red",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "led_rr:C",
+      "r4:1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "r4:2",
+      "esp:GND.1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:2",
+      "led_status:A",
+      "blue",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "led_status:C",
+      "r5:1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "r5:2",
+      "esp:GND.1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:33",
+      "logic1:D0",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:25",
+      "logic1:D1",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:26",
+      "logic1:D2",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:27",
+      "logic1:D3",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "logic1:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

@@ -3,27 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Web controller for the ESP32 RC car">
+  <meta name="description" content="Web controller for the ESP32 RC car (Tier 1 FreeRTOS + PWM)">
   <title>ESP32 RC Car</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>ESP32 RC CAR</h1>
-  <p id="status" class="status" role="status">Connecting&hellip;</p>
+  
+  <div class="status-bar">
+    <span id="status" class="status-badge" role="status">Connecting&hellip;</span>
+    <span id="vehicle-state" class="state-badge">IDLE</span>
+  </div>
 
   <main>
-    <div class="left">
-      <p><button id="btn-forward" class="button" data-cmd="up" aria-label="Forward">&#8593;</button></p>
-      <p><button id="btn-reverse" class="button" data-cmd="down" aria-label="Reverse">&#8595;</button></p>
+    <div class="controls-dpad">
+      <button id="btn-forward" class="btn btn-forward" data-cmd="up" aria-label="Forward">&#8593;</button>
+      <div class="middle-row">
+        <button id="btn-left" class="btn btn-left" data-cmd="left" aria-label="Turn left">&#8592;</button>
+        <div class="dpad-center">&#9881;</div>
+        <button id="btn-right" class="btn btn-right" data-cmd="right" aria-label="Turn right">&#8594;</button>
+      </div>
+      <button id="btn-reverse" class="btn btn-reverse" data-cmd="down" aria-label="Reverse">&#8595;</button>
     </div>
-    <div class="right">
-      <p>
-        <button id="btn-left" class="button" data-cmd="left" aria-label="Turn left">&#8592;</button>
-        <button id="btn-right" class="button" data-cmd="right" aria-label="Turn right">&#8594;</button>
-      </p>
+
+    <div class="speed-control">
+      <div class="speed-header">
+        <span>Throttle (LEDC PWM)</span>
+        <span id="speed-display">200 / 255</span>
+      </div>
+      <input type="range" id="speed-slider" min="80" max="255" value="200" step="5">
     </div>
   </main>
+
+  <footer class="footer">
+    <span>Heartbeat fail-safe active (350ms)</span>
+  </footer>
 
   <script src="app.js"></script>
 </body>
